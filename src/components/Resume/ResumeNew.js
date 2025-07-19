@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Container, Row } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import Particle from "../Particle";
-import pdf from "../../Assets/Utkarsh_Anand_Resume.pdf"; // Correct relative path
+import pdf from "/workspaces/utkarsh-portfolio/src/Assets/UTKARSH ANAND.pdf"; // Correct relative path
 import { AiOutlineDownload } from "react-icons/ai"; // <-- The missing import
 import { Document, Page, pdfjs } from "react-pdf";
 import "react-pdf/dist/esm/Page/AnnotationLayer.css";
@@ -12,6 +12,10 @@ pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/$
 
 function ResumeNew() {
   const [width, setWidth] = useState(1200);
+  const [numPages, setNumPages] = useState(null);
+  const onDocumentLoadSuccess = ({ numPages }) => {
+    setNumPages(numPages);
+  };
 
   useEffect(() => {
     setWidth(window.innerWidth);
@@ -37,8 +41,14 @@ function ResumeNew() {
 
         {/* PDF Viewer */}
         <Row className="resume">
-          <Document file={pdf} className="d-flex justify-content-center">
-            <Page pageNumber={1} scale={width > 786 ? 1.7 : 0.6} />
+          <Document file={pdf} onLoadSuccess={onDocumentLoadSuccess} className="d-flex justify-content-center">
+            {Array.from(new Array(numPages), (el, index) => (
+              <Page
+                key={`page_${index + 1}`}
+                pageNumber={index + 1}
+                scale={width > 786 ? 0.9 : 0.6}
+                />
+            ))}
           </Document>
         </Row>
 
