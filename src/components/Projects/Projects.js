@@ -25,7 +25,7 @@ function Projects() {
           My Recent <strong className="purple">Works </strong>
         </h1>
         <p style={{ color: "white" }}>
-          Here are a few projects/resources I’ve uploaded recently.
+          Here are a few projects/resources I've uploaded recently.
         </p>
 
         <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
@@ -50,6 +50,15 @@ function Projects() {
                 { name: "BRM Group Research Report", path: "/projects/report_files/BRM_GROUP_RESEARCH_REPORT.pdf" },
                 { name: "Article on Quality Education", path: "/projects/report_files/AN_ARTICLE_ON_QUALITY_EDUCATION.pdf" },
                 { name: "A Report on Diversity", path: "/projects/report_files/A_REPORT_ON_DIVERSITY.docx" },
+                { name: "Predictive Model Plan", path: "/projects/report_files/Predictive_Model_Plan.docx" },
+                { name: "UTKARSH ANAND FE", path: "/projects/report_files/UTKARSH_ANAND_FE.pdf" },
+                { name: "FS Mutual Fund Comparison", path: "/projects/report_files/FS_MUTUAL_FUND_COMPARISION.pdf" },
+                { name: "ML Individual Report", path: "/projects/report_files/ML_individual.docx" },
+                { name: "Article on Quality Education (Updated)", path: "/projects/report_files/AN_ARTICLE_ON_QUALITY_EDUCATION[1].docx" },
+                { name: "REPORT STATISTICAL ANALYSIS", path: "/projects/report_files/REPORT_STATISTICAL__ANALYSIS__AND___DECISION__.docx"},
+                {name: "Field Project HBO", path: "/projects/report_files/field_project_HBO.docx"},
+                {name: " AI in Finance", path:"/projects/report_files/Artificial_Intelligence_in_Finance.docx"},
+                {name:"Monetary policy influence in indian economy",path:"/projects/report_files/Monetary_Policy_Influence_Price_Stability_in_the_Indian_Economy.docx"}
               ]}
             />
           </Col>
@@ -107,6 +116,7 @@ function Projects() {
                 { name: "LTI Mindtree", path: "/projects/excel_files/LTI_Mindtree.xlsx" },
                 { name: "ITC Financial Data", path: "/projects/excel_files/ITC_FINANCIAL_DATA.xlsx" },
                 { name: "Nestle Dashboard Financial Data", path: "/projects/excel_files/nestle_dashboard_financial_data.xlsx" },
+                {name:"Bajaj Holdings and investment", path:"/projects/excel_files/Bajaj_Holdings_and_investment.xlsx"}
               ]}
             />
           </Col>
