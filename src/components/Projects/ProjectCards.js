@@ -3,27 +3,44 @@ import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 
 function ProjectCards(props) {
+  const handleImageError = (e) => {
+    e.target.onerror = null; // Prevents loop
+    e.target.src = "/default-image.png"; // Fallback image in /public
+  };
+
   return (
     <Card className="project-card-view">
-      <Card.Img variant="top" src={props.imgPath} alt="card-img" />
+      <Card.Img
+        variant="top"
+        src={props.imgPath}
+        alt={`${props.title} cover`}
+        onError={handleImageError}
+      />
       <Card.Body>
         <Card.Title>{props.title}</Card.Title>
         <Card.Text style={{ textAlign: "justify" }}>
           {props.description}
         </Card.Text>
 
-        {/* Only Download Button */}
+        {/* Download Buttons */}
         {props.files && props.files.map((file, idx) => (
           <div key={idx} style={{ marginBottom: "0.3rem" }}>
-            <Button
-              variant="primary"
+            <a
               href={file.path}
               download
               target="_blank"
-              style={{ marginBottom: "0.2rem" }}
+              rel="noopener noreferrer"
+              style={{ textDecoration: "none" }}
+              aria-label={`Download ${file.name}`}
             >
-              Download {file.name}
-            </Button>
+              <Button
+                variant="primary"
+                style={{ marginBottom: "0.2rem" }}
+                size="sm"
+              >
+                Download {file.name}
+              </Button>
+            </a>
           </div>
         ))}
       </Card.Body>
