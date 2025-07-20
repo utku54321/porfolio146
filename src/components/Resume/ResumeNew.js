@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Container, Row } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import Particle from "../Particle";
-import pdf from "../../Assets/UTKARSH_ANAND.pdf"; // Correct relative path
+import pdf from "../../Assets/UTKARSH_ANAND (1).pdf"; // Correct relative path
 import { AiOutlineDownload } from "react-icons/ai"; // <-- The missing import
 import { Document, Page, pdfjs } from "react-pdf";
 import "react-pdf/dist/esm/Page/AnnotationLayer.css";
